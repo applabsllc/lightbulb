@@ -1,0 +1,32 @@
+<script>
+
+function seeIfAllShine(list, current){
+	console.log("turned on:", list);
+	console.log("current check:", current);
+	
+	for(let c = 0; c < current+1; c++){
+	
+		if(list[c] > 0){
+			continue;
+		}else{
+			return false;
+		}
+	}
+	
+	return true;
+}
+
+function lightbulb(lights){
+
+let turnedOn = Array(lights.length).fill(0);
+for(let x = 0; x < lights.length; x++){
+	turnedOn[lights[x]-1] = 1;
+	let allShine = seeIfAllShine(turnedOn, x);
+	console.log("allShine",allShine);
+}
+
+}
+
+lightbulb([2, 1, 3, 5, 4]);
+
+</script>
